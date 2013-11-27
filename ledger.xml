@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<snippets language="ledger">
+  <snippet>
+    <accelerator><![CDATA[<Primary>t]]></accelerator>
+    <description>New snippet</description>
+    <text><![CDATA[$<
+global expense_spaces, asset_spaces
+default_column = 32
+margin_left = 2
+margin_right = 2
+expense_account = "Expenses:" + $5
+asset_account = "Assets:Bank:Checking"
+
+space_count = max(len(expense_account), len(asset_account))
+space_count = space_count + margin_right
+space_count = max(space_count, default_column - margin_left)
+
+expense_spaces = " " * (space_count - len(expense_account))
+asset_spaces   = " " * (space_count - len(asset_account))
+>
+$<1: import datetime; return str(datetime.date.today().year)>-$<2: import datetime; return '{0:02d}'.format(datetime.date.today().month)>-$<3: import datetime; return '{0:02d}'.format(datetime.date.today().day)> ${4:Payee}
+  Expenses:${5:Expense Account}$<[5]: return expense_spaces>$${6:Amount}
+  Assets:Bank:Checking$<[5]: return asset_spaces>-$${6:Amount}]]></text>
+  </snippet>
+</snippets>

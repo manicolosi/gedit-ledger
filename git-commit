@@ -1,0 +1,13 @@
+#!/bin/sh
+# [Gedit Tool]
+# Name=Commit!
+# Input=nothing
+# Output=output-panel
+# Shortcut=<Primary><Shift>s
+# Save-files=document
+# Applicability=all
+
+
+cd $GEDIT_CURRENT_DOCUMENT_DIR
+git add $GEDIT_FILENAME
+git commit -m "Update finances"
