@@ -17,7 +17,7 @@ The git commit probably doesn't belong here, but it's used for version
 controlling my ledger files, so here it is.
 
 The goal of this project was to get some ledger support for a basic text editor
-so that my wife can update the ledger file. I personally use vim and the
+so that my wife can update our ledger file. I personally use vim and the excellent
 [vim-ledger](https://github.com/ledger/vim-ledger) plugin.
 
 ## Installation
@@ -31,6 +31,13 @@ cp ledger.lang ~/.local/share/gtksourceview-3.0/language-specs
 cp git-commit ~/.config/gedit/tools
 cp ledger.xml ~/.config/gedit/snippets
 ```
+
+Oh, don't forget to enable the Snippets and Tools plugins in gedit preferences.
+If you're using git to version control your ledger files, enable the git plugin
+that shows added/removed/modified lines.
+
+You may want to assign a hotkey to the transaction snippet and the git-commit tool,
+too.
 
 ## TODO
 
